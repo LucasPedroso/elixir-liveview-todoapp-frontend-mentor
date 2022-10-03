@@ -289,7 +289,7 @@ html .clear-completed:active {
   top: 0.75rem;
 }
 
-.round input[type=checkbox] + label:hover:after {
+.form-input .round input[type=checkbox] + label:hover:after {
 	position: absolute;
 	top: -1px; bottom: -1px;
 	left: -1px; right: -1px;
@@ -299,24 +299,24 @@ html .clear-completed:active {
 	border-radius: 50%;
 }
 
-.round input[type=checkbox] + label:hover:before {
-position: absolute;
-top: 0px; bottom: 0px;
-left: 0px; right: 0px;
-background: white;
-content: '';
-z-index: 2;
-border-radius: 50%;
+.form-input .round input[type=checkbox] + label:hover:before {
+	position: absolute;
+	top: 0px; bottom: 0px;
+	left: 0px; right: 0px;
+	background: white;
+	content: '';
+	z-index: 2;
+	border-radius: 50%;
 }
 
 li:not(.completed) .round input[type=checkbox] + label:hover:after {
-    position: absolute;
-    top: -1px; bottom: -1px;
-    left: -1px; right: -1px;
-    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-    content: '';
-    z-index: 1;
-    border-radius: 50%;
+	position: absolute;
+	top: -1px; bottom: -1px;
+	left: -1px; right: -1px;
+	background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+	content: '';
+	z-index: 1;
+	border-radius: 50%;
 }
 
 li:not(.completed) .round input[type=checkbox] + label:hover:before {
