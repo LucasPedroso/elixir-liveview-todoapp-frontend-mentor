@@ -173,6 +173,7 @@ li > div > label[for|="checkbox"] {
 	font-size: 0.9rem;
 	background-color: hsl(0, 0%, 98%);
 	box-shadow: hsl(235deg 19% 75%) 0px 10px 20px -5px;
+	border-radius: 0 0 5px 5px;
 }
 
 .todo-count {
