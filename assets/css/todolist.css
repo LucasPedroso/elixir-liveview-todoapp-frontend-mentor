@@ -43,7 +43,7 @@ body {
 }
 
 .form-input {
-	background-color: white;
+	background-color: hsl(0, 0%, 98%);
 	border-radius: 5px;
 	min-height: 65px;
 }
@@ -80,7 +80,7 @@ body {
 	border: 0;
 	color: inherit;
 	padding: 6px;
-	border: 1px solid #999;
+	border: 1px solid hsl(236, 9%, 61%);
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -293,7 +293,6 @@ html .clear-completed:active {
   left: 0.4rem;
   position: absolute;
   top: 3px;
-
 }
 
 form.completed .round label:after {
@@ -469,6 +468,8 @@ input[type="text"] {
 
 	.dark-mode {
 		background-image: url('../images/bg-mobile-dark.jpg');
+		background-color: hsl(237, 14%, 06%);
+		box-shadow: none;
 	}
 
 	.dark-mode-todos ul {
@@ -478,7 +479,6 @@ input[type="text"] {
 
 	.completed .round label:after {
 		top: 5px;
-	
 	}
 
 	input[type="text"] {
