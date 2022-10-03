@@ -296,6 +296,10 @@ html .clear-completed:active {
 
 }
 
+form.completed .round label:after {
+	top: 5px;
+}
+
 .round input[type="checkbox"] {
   visibility: hidden;
 }
