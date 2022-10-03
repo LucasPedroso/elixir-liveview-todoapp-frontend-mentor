@@ -1,0 +1,93 @@
+<section id="todo-app" class="todoapp" phx-update="prepend">
+  <header id="header" class="header">
+    <h1 id="title">TODO</h1>
+    <button id="dark" phx-hook="Dark">
+      <img id="img-theme" src="/images/icon-moon.svg" alt="Toggle Mode" />
+    </button>
+  </header>
+  <section id="form-input" class="form-input">
+    <form phx-submit="create" id="form">
+      <div id="round" class="round">
+        <input
+          id="new_todo_checkbox"
+          name="checkbox" 
+          class="toggle" 
+          type="checkbox"
+        />
+        <label id="new_todo_checkbox_label" for="new_todo_checkbox"></label>
+      </div>
+      <input
+        id="new_todo"
+        class="new-todo"
+        type="text"
+        name="text"
+        placeholder="Create a new todo..."
+        autofocus=""
+        required="required"
+      />
+    </form>
+  </section>
+  <section id="main" class="main">
+    <ul id="todo-list" class="todo-list">
+        <%= for todo <- @todos do %>
+          <li data-id={todo.id} class={completed?(todo)} id={todoId?(todo)}>
+            <div class="view">
+              <div class="round">
+                <%= if checked?(todo) do %>
+                  <input id={checkboxId?(todo)} class="toggle" type="checkbox" phx-value-id={todo.id} phx-click="toggle" checked />
+                <% else %>
+                  <input id={checkboxId?(todo)} class="toggle" type="checkbox" phx-value-id={todo.id} phx-click="toggle" />
+                <% end %>
+                <label for={checkboxId?(todo)}></label>
+              </div>
+              <%= if not is_nil(@editing) and todo.id == @editing do %>
+                <form phx-submit="update-todo" id="form-update">
+                  <input
+                    id="update_todo"
+                    class="new-todo"
+                    type="text"
+                    name="text"
+                    required="required"
+                    value={todo.title}
+                    phx-hook="FocusInputItem"
+                  />
+                  <input type="hidden" name="id" value={todo.id}/>
+                </form>
+              <% else %>
+                <label phx-click="edit-todo" phx-value-id={todo.id}><%= todo.title %></label>
+              <% end %>
+
+
+
+              <button class="destroy" phx-click="delete" phx-value-id={todo.id}>
+                <img src="images/icon-cross.svg" alt="Delele Todo" />
+              </button>
+            </div>
+          </li>
+        <% end %>
+    </ul>
+  </section>
+  <footer id="footer" class="footer">
+    <span id="counter" class="todo-count"><%= @todosIncomplete %> item left</span>
+    <ul id="footer-select" class="filters">
+      <li id="all">
+        <span class="selected">
+          <%= live_patch "All", to: Routes.live_path(@socket, TodoListWeb.TodoLive, %{filter_by: "all"}) %>
+        </span>
+      </li>
+      <li id="active">
+        <span id="active-span">
+          <%= live_patch "Active", to: Routes.live_path(@socket, TodoListWeb.TodoLive, %{filter_by: "active"}) %>
+        </span>
+      </li>
+      <li id="completed">
+        <span id="completed-span">
+          <%= live_patch "Completed", to: Routes.live_path(@socket, TodoListWeb.TodoLive, %{filter_by: "completed"}) %>
+        </span>
+      </li>
+    </ul>
+    <button class="clear-completed" phx-click="clear-completed">
+      Clear completed
+    </button>
+  </footer>
+</section>

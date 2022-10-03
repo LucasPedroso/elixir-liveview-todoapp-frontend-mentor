@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-size: 1rem;
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	background: #f5f5f5;
+	color: hsl(235, 19%, 35%);
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0 auto;
+	font-weight: 400;
+}
+
+:focus {
+	outline: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.todoapp {
+	background: transparent;
+	padding: 80px 0 40px 0;
+}
+
+.form-input {
+	background-color: white;
+	border-radius: 5px;
+	min-height: 65px;
+}
+
+.form-input form {
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 1.2rem;
+}
+
+.header {
+	display: flex;
+	justify-content:space-between ;
+	padding-bottom: 35px;
+	align-items: center;
+}
+
+.header h1 {
+	margin: 0;
+	width: 100%;
+	font-size: 2.3rem;
+	font-weight: 700;
+	text-align: left;
+	color: white;
+	letter-spacing: 1rem;
+}
+
+.new-todo,
+.edit {
+	margin: 0;
+	width: 100%;
+	font-size: 1.5rem;
+	line-height: 1.4em;
+	border: 0;
+	color: inherit;
+	padding: 6px;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.new-todo {
+	padding: 1.1rem 1rem 1rem 2.2rem;
+	border: none;
+	background: rgba(0, 0, 0, 0.003);
+}
+
+.main {
+	border-top: 50px;
+	z-index: 2;
+	margin-top: 1.5rem;
+	border-radius: 5px 5px 0 0;
+
+	background-color: hsl(0, 0%, 98%);
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, 
+	rgba(0, 0, 0, 0.07) 0px 2px 4px, 
+	rgba(0, 0, 0, 0.07) 0px 4px 8px,
+	rgba(0, 0, 0, 0.07) 0px 8px 16px;
+}
+
+.todo-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.selected {
+	color: hsl(236, 33%, 92%)
+}
+
+.view {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	min-width: 100%;
+	align-items: center;
+}
+
+.view button {
+	display: flex;
+}
+
+.dark-mode .view label {
+	color: hsl(233, 11%, 84%);
+}
+
+.dark-mode .completed .view label {
+	color: hsl(233, 14%, 35%);
+}
+
+li > div :nth-child(2) {
+	flex-grow: 1;
+	box-sizing: border-box;
+	padding-left: 2rem;
+}
+
+li > div > label[for|="checkbox"] {
+	padding-left: 0;
+}
+
+.view > div :nth-child(2) {
+	padding-left: 0;
+}
+
+.view form input {
+	padding: 0 0 0 0;
+}
+
+.todo-list li {
+	position: relative;
+	font-size: 1.1rem;
+	border-bottom: 1px solid #ededed;
+	padding: 0.5rem 1.5rem;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 700;
+	color: hsl(236, 9%, 61%);
+	padding: 1.2rem 1.2rem;
+	height: 20px;
+	text-align: center;
+	white-space: nowrap;
+	border-top: 1px solid #e6e6e6;
+	font-size: 0.9rem;
+	background-color: hsl(0, 0%, 98%);
+	box-shadow: hsl(235deg 19% 75%) 0px 10px 20px -5px;
+}
+
+.todo-count {
+	float: left;
+	text-align: left;
+	font-weight: 400;
+}
+
+.todo-count strong {
+	font-weight: 400;
+}
+
+.filters {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	right: 0;
+	left: 0;
+}
+
+.filters li {
+	display: inline;
+}
+
+.filters li a {
+	color: inherit;
+	margin: 3px;
+	padding: 3px 7px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+.filters li a:active {
+	color: hsl(223, 100%, 57%);
+}
+
+.filters li a:hover {
+	color: hsl(235, 19%, 35%);
+
+}
+
+.filters li a.selected {
+	border-color: rgba(175, 47, 47, 0.2);
+}
+
+footer button:hover {
+	color: hsl(235, 19%, 35%);
+	text-decoration: none;
+}
+
+.completed label {
+ text-decoration: line-through;
+ color: hsl(234, 39%, 85%);
+}
+
+.clear-completed,
+html .clear-completed:active {
+	float: right;
+	position: relative;
+	line-height: 20px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.clear-completed:hover {
+	text-decoration: none;
+}
+
+.info {
+	margin: 65px auto 0;
+	color: #bfbfbf;
+	font-size: 10px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-align: center;
+}
+
+.info p {
+	line-height: 1;
+}
+
+.info a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+.info a:hover {
+	text-decoration: underline;
+}
+
+.fixed-bg {
+	background-image: url('../images/bg-desktop-light.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+}
+
+.round {
+  position: relative;
+}
+
+.round label {
+  border: 1px solid hsl(236, 33%, 92%);
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  left: 0;
+  top: 0.75rem;
+}
+
+.completed .round label:after {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='9'%3E%3Cpath fill='none' stroke='%23FFF' stroke-width='2' d='M1 4.304L3.696 7l6-6'/%3E%3C/svg%3E");
+  left: 0.4rem;
+  position: absolute;
+  top: 3px;
+
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+round input[type="checkbox"] + label::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px; 
+  padding: 10px; 
+  background:linear-gradient(45deg,red,blue); 
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; 
+}
+
+label[for="new_todo_checkbox"] {
+	top: 0;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+#update_todo {
+	border: none;
+	background: rgba(0, 0, 0, 0.003);
+}
+
+input[type="text"] {
+	font-size: 1.1rem;
+	font-family: 'Josefin Sans', sans-serif;
+	/* color: hsl(235, 19%, 35%); */
+	line-height: 1.9;
+	border: none;
+	background: rgba(0, 0, 0, 0.003);
+}
+
+.dark-mode {
+	background-color: hsl(237, 14%, 06%);
+	background-image: url('../images/bg-desktop-dark.jpg');
+}
+
+.dark-mode-todos {
+	background-color: hsl(237, 14%, 26%);
+	box-shadow: none;
+}
+
+.dark-mode #img-theme {
+	content: url('../images/icon-sun.svg');
+}
+
+/*
+	Hack to remove background from Mobile Safari.
+	Can't use it globally since it destroys checkboxes in Firefox
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	
+	.toggle-all,
+	.todo-list li .toggle {
+		background: none;
+	}
+
+	.todo-list li .toggle {
+		height: 40px;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+
+	.todoapp {
+		padding: 2.6rem 1.5rem;
+	}
+
+	.header {
+		padding-bottom: 2.5rem
+	}
+	
+	.header h1 {
+		font-size: 1.7rem;
+		letter-spacing: 0.5rem;
+	}
+
+	.round label:after {
+		top: 5px;
+	}
+
+	.form-input {
+		display: flex;
+		max-height: 3rem;
+		min-height: 3rem;
+	}
+
+	.form-input form {
+		flex-grow: 1;
+	}
+
+	.new-todo {
+		padding: 1.2rem 1rem 1rem 1rem
+	}
+
+	.new-todo-label[for=new_todo_checkbox]:after {
+		top:4px;
+	}
+
+	.main {
+		margin-top: 1rem;
+	}
+
+	.footer {
+		height: 1.5rem;
+    border-radius: 0 0 5px 5px;
+	}
+
+	.filters {
+    display: flex;
+		background-color: hsl(0, 0%, 98%);
+		border-radius: 5px;
+		padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    font-size: 1rem;
+		bottom: -70px;
+		left: -96px;
+		align-items: center;
+		box-shadow: hsl(235deg 19% 75%) 0px 10px 20px -5px;
+	}
+
+	.filters li {
+		padding: 1rem;
+	}
+
+	.todo-count {
+		padding: 5px;
+	}
+
+	.todo-list li {
+		padding: 0.2rem 1rem;
+		font-size: 0.9rem;
+	}
+
+	li > div :nth-child(2) {
+		padding-left: 1rem;
+	}
+
+	.clear-completed {
+		left: -230px;
+		position: relative;
+		font-size: 0.9rem;
+	}
+
+	.destroy img {
+		width: 0.8rem;
+	}
+
+	.fixed-bg {
+		background-image: url('../images/bg-mobile-light.jpg');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: top center;
+	}
+
+	.dark-mode {
+		background-image: url('../images/bg-mobile-dark.jpg');
+	}
+
+	.dark-mode-todos ul {
+		background-color: hsl(237, 14%, 26%);
+		box-shadow: none;
+	}
+
+	input[type="text"] {
+		font-size: 0.9rem;
+	}
+}
