@@ -6,14 +6,28 @@
     </button>
   </header>
   <section id="form-input" class="form-input">
-    <form phx-submit="create" id="form">
+    <form phx-submit="create" id="form" class={allCompleted?(@todos)}>
       <div id="round" class="round">
-        <input
-          id="new_todo_checkbox"
-          name="checkbox" 
-          class="toggle" 
-          type="checkbox"
-        />
+        <%= if isAllTodosDone?(@todos) do %>
+          <input
+            id="new_todo_checkbox"
+            name="checkbox" 
+            class="toggle" 
+            type="checkbox"
+            phx-value-id="all-todos"
+            phx-click="check-all-todos"
+            checked
+          />
+        <% else %>
+          <input
+            id="new_todo_checkbox"
+            name="checkbox" 
+            class="toggle" 
+            type="checkbox"
+            phx-value-id="all-todos"
+            phx-click="check-all-todos"
+          />
+        <% end %>
         <label id="new_todo_checkbox_label" for="new_todo_checkbox"></label>
       </div>
       <input
@@ -56,9 +70,6 @@
               <% else %>
                 <label phx-click="edit-todo" phx-value-id={todo.id}><%= todo.title %></label>
               <% end %>
-
-
-
               <button class="destroy" phx-click="delete" phx-value-id={todo.id}>
                 <img src="images/icon-cross.svg" alt="Delele Todo" />
               </button>

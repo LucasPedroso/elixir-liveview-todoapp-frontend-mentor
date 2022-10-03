@@ -1,6 +1,7 @@
 defmodule TodoListWeb.TodoLive do
   use TodoListWeb, :live_view
   alias TodoList.Todos
+  alias Ecto.Repo
 
 
   @topic "live"
@@ -19,7 +20,6 @@ defmodule TodoListWeb.TodoLive do
 
   def handle_event("create", %{"text" => title}, socket) do
     Todos.create_todo(%{title: title})
-    # socket = assign(socket, todos: Todos.list_todos(), active: %Todos{})
     socket = fetch(socket)
     TodoListWeb.Endpoint.broadcast_from(self(), @topic, "update", socket.assigns)
     {:noreply, socket}
@@ -28,7 +28,6 @@ defmodule TodoListWeb.TodoLive do
   def handle_event("delete", %{"id" => id}, socket) do
     todo = Todos.get_todo!(id)
     Todos.delete_todo(todo)
-    # socket = assign(socket, todos: Todos.list_todos(), active: %Todos{})
     socket = fetch(socket)
     TodoListWeb.Endpoint.broadcast_from(self(), @topic, "delete", socket.assigns)
     {:noreply, socket}
@@ -38,8 +37,22 @@ defmodule TodoListWeb.TodoLive do
     done = if Map.has_key?(data, "value"), do: true, else: false
     todo = Todos.get_todo!(Map.get(data, "id"))
     Todos.update_todo(todo, %{id: todo.id, done: done})
-    # socket = assign(socket, todos: Todos.list_todos(), active: %Todos{})
     socket = fetch(socket)
+    TodoListWeb.Endpoint.broadcast_from(self(), @topic, "update", socket.assigns)
+    {:noreply, socket}
+  end
+
+  def handle_event("check-all-todos", data, socket) do
+    done = if Map.has_key?(data, "value"), do: true, else: false
+
+    todos = Todos.list_todos()
+
+    Enum.each(todos, fn(todo) ->
+      Todos.update_todo(todo, %{done: done})
+    end)
+
+    socket = fetch(socket)
+
     TodoListWeb.Endpoint.broadcast_from(self(), @topic, "update", socket.assigns)
     {:noreply, socket}
   end
@@ -51,7 +64,6 @@ defmodule TodoListWeb.TodoLive do
   def handle_event("update-todo", %{"id" => todo_id, "text" => title}, socket) do
     current_item = Todos.get_todo!(todo_id)
     Todos.update_todo(current_item, %{title: title})
-    # todos = Todos.list_todos()
     socket = assign(socket, todos: Todos.list_todos(), editing: nil)
     TodoListWeb.Endpoint.broadcast_from(self(), @topic, "update", socket.assigns)
     {:noreply, socket}

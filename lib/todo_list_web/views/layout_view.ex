@@ -13,11 +13,19 @@ defmodule TodoListWeb.LayoutView do
     if not is_nil(todo.done) and todo.done == true, do: "completed", else: ""
   end
 
+  def allCompleted?(todos) do
+    if isAllTodosDone?(todos), do: "completed", else: ""
+  end
+
   def checkboxId?(todo) do
     "checkbox-#{todo.id}"
   end
 
   def todoId?(todo) do
     "dark-#{todo.id}"
+  end
+
+  def isAllTodosDone?(todos) do
+    Enum.all?(todos, fn todo -> todo.done == true end)
   end
 end
