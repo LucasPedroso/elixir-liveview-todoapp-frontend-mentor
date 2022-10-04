@@ -156,7 +156,14 @@ li > div > label[for|="checkbox"] {
 .todo-list li {
 	position: relative;
 	font-size: 1.1rem;
-	border-bottom: 1px solid #ededed;
+	border-bottom: 1px solid hsl(236, 33%, 92%);
+	padding: 0.5rem 1.5rem;
+}
+
+.dark-mode .todo-list li {
+	position: relative;
+	font-size: 1.1rem;
+	border-bottom: 1px solid hsl(233, 14%, 35%);
 	padding: 0.5rem 1.5rem;
 }
 
@@ -169,7 +176,6 @@ li > div > label[for|="checkbox"] {
 	height: 20px;
 	text-align: center;
 	white-space: nowrap;
-	border-top: 1px solid #e6e6e6;
 	font-size: 0.9rem;
 	background-color: hsl(0, 0%, 98%);
 	box-shadow: hsl(235deg 19% 75%) 0px 10px 20px -5px;
