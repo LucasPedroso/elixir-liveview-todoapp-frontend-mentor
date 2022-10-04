@@ -1,7 +1,16 @@
 Desafio Técnico em Elixir LiveView, criar um todo app com este layout https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW
 
-Meu primeiro contato com a linguagem Elixir.
-Deu para entender o poder que temos com Elixir Liveview, mas se mostra complicado quando precisa integrar js/css com live updates, Ex: dark theme ativando com hooks e depois atualizar algum estado que modifica o socket sem perder as alterações no css que foram feitas pelo hook. Tirando isto achei fácil e simples.
+Meu primeiro contato com a linguagem Elixir.</br>
+Recomendo estudar pelo https://elixirschool.com/ para dar os primeiros passos com Elixir, depois dar uma olhada no Phoenix LiveView https://hexdocs.pm/phoenix_live_view/Phoenix.Component.html
+
+Links úteis:</br>
+<ul>
+  <li>https://hexdocs.pm/ecto/Ecto.html</li>
+  <li>https://hexdocs.pm/phoenix_live_view/js-interop.html</li>
+</ul>
+
+Tutorial de apoio:</br>
+https://github.com/dwyl/phoenix-liveview-todo-list-tutorial
 
 <a href="https://ibb.co/JrcVvn0"><img src="https://i.ibb.co/tYHgqBk/Screenshot-from-2022-10-02-22-59-06.png" alt="Screenshot-from-2022-10-02-22-59-06" border="0"></a>
 
