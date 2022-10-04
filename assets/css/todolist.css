@@ -330,14 +330,14 @@ li:not(.completed) .round input[type=checkbox] + label:hover:before {
 }
 
 body.dark-mode li:not(.completed) .round input[type=checkbox] + label:hover:before {
-	background-color: hsl(237, 14%, 26%);
+	background-color: hsl(235, 24%, 19%);
 	top: 0px; bottom: 0px;
 	left: 0px; right: 0px;
 	z-index: 11;
 }
 
 body.dark-mode .round input[type=checkbox] + label:hover:before {
-	background-color: hsl(237, 14%, 26%);
+	background-color: hsl(235, 24%, 19%);
 	top: 0px; bottom: 0px;
 	left: 0px; right: 0px;
 	z-index: 11;
