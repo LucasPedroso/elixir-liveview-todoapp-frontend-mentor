@@ -400,12 +400,12 @@ input[type="text"] {
 }
 
 .dark-mode {
-	background-color: hsl(237, 14%, 06%);
+	background-color: hsl(235, 21%, 11%);
 	background-image: url('../images/bg-desktop-dark.jpg');
 }
 
 .dark-mode-todos {
-	background-color: hsl(237, 14%, 26%);
+	background-color: hsl(235, 24%, 19%);
 	box-shadow: none;
 }
 
