@@ -44,7 +44,7 @@
   <section id="main" class="main">
     <ul id="todo-list" class="todo-list">
         <%= for todo <- @todos do %>
-          <li data-id={todo.id} class={completed?(todo)} id={todoId?(todo)}>
+          <li data-id={todo.id} class={completed?(todo)} id={todoId?(todo)} phx-hook="Dark">
             <div class="view">
               <div class="round">
                 <%= if checked?(todo) do %>
