@@ -160,11 +160,27 @@ li > div > label[for|="checkbox"] {
 	padding: 0.5rem 1.5rem;
 }
 
+.todo-list li button {
+	opacity: 0;
+}
+
+.todo-list li button:hover {
+	opacity: 1;
+}
+
+.todo-list-li-hover {
+	opacity: 1;
+}
+
 .dark-mode .todo-list li {
 	position: relative;
 	font-size: 1.1rem;
 	border-bottom: 1px solid hsl(233, 14%, 35%);
 	padding: 0.5rem 1.5rem;
+}
+
+.dark-mode footer {
+	color: hsl(233, 14%, 35%);
 }
 
 .footer {
